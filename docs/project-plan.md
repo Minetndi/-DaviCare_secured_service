@@ -152,7 +152,7 @@ davicare-secure-vault/
 ### Logging and monitoring
 - **CloudTrail:** multi-region, log file validation on, a KMS-encrypted bucket that only CloudTrail can write to, CloudWatch Logs integration, and **S3 data events for the vault bucket** so object-level access is recorded.
 - **Metric filters and alarms, sent to SNS email:** root account use, IAM policy changes, security group changes, KMS key disabled or scheduled for deletion, S3 bucket policy changes, console login without MFA, repeated `AccessDenied`/`UnauthorizedOperation` errors, RDS CPU or connection spikes.
-- **AWS Budgets** alert at a small monthly threshold (for example $20), to protect against a forgotten deployment.
+- **AWS Budgets** alert at a small monthly threshold (for example $20), to protect against a forgotten deployment. Created in the bootstrap stack so it survives teardown (ADR-0011).
 - **App audit log:** JSON records of who accessed which synthetic record ID and when, with no PHI fields.
 
 ---
@@ -176,7 +176,7 @@ The core deliverable is documentation plus Terraform that is written but **switc
 |---|---|---|
 | EC2 | t4g.micro / t3.micro | Low, or free tier |
 | RDS | db.t4g.micro, single-AZ, 20 GB | Low, or free tier |
-| KMS | 2 CMKs | about $1 per key per month |
+| KMS | 3 CMKs (data, logs, tfstate) | about $1 per key per month |
 | NAT Gateway | **none** | $0 |
 | S3 gateway endpoint | yes | $0 |
 | Interface endpoints | only in the stretch goals | about $7–8 per endpoint per AZ per month |
@@ -206,7 +206,7 @@ Deploy, capture evidence, then `terraform destroy`.
 | Phase | Deliverable | Status |
 |---|---|---|
 | 0. Design | Diagram, threat model, data classification, first ADRs, repo skeleton | Done |
-| 1. Bootstrap | Remote state (encrypted S3 with native locking), GitHub OIDC role | |
+| 1. Bootstrap | Remote state (encrypted S3 with native locking), GitHub OIDC role, account budget (ADR-0011) | Code ready |
 | 2. Network | VPC, subnets, routing, S3 gateway endpoint, Flow Logs | |
 | 3. Security core | KMS keys, IAM roles and boundary, security groups, Access Analyzer | |
 | 4. Data | RDS MySQL (private, encrypted, TLS) and the hardened S3 vault | |
