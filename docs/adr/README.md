@@ -14,5 +14,6 @@ Each significant design decision is recorded here in a lightweight format: conte
 | [0008](0008-s3-native-state-locking.md) | S3-native Terraform state locking | Accepted |
 | [0009](0009-app-db-user.md) | Dedicated least-privilege app DB user | Accepted |
 | [0010](0010-app-proxies-s3-documents.md) | App proxies S3 document transfers | Accepted |
+| [0011](0011-bootstrap-stack-scope.md) | Bootstrap stack scope: state key, plan-only CI role, budget | Accepted |
 
 Planned: scanner exceptions (Phase 8), AI foundation design (Phase 7).
