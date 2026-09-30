@@ -1,0 +1,44 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl.bak
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+tfplan
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+# Variable files can hold environment-specific values; commit only *.tfvars.example
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated synthetic data (regenerate with scripts/)
+scripts/output/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
