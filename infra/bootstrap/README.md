@@ -37,7 +37,7 @@ aws s3api get-bucket-encryption       --bucket "$BUCKET"
 aws s3api get-bucket-versioning       --bucket "$BUCKET"
 aws s3api get-public-access-block     --bucket "$BUCKET"
 aws s3api get-bucket-policy           --bucket "$BUCKET" --query Policy --output text
-aws kms get-key-rotation-status --key-id alias/davicare-tfstate
+aws kms get-key-rotation-status --key-id "$(terraform output -raw state_kms_key_arn)"
 # Non-TLS request must fail:
 aws s3api list-objects-v2 --bucket "$BUCKET" --endpoint-url http://s3.us-east-1.amazonaws.com
 ```
