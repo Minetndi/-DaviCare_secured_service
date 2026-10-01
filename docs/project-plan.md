@@ -206,8 +206,8 @@ Deploy, capture evidence, then `terraform destroy`.
 | Phase | Deliverable | Status |
 |---|---|---|
 | 0. Design | Diagram, threat model, data classification, first ADRs, repo skeleton | Done |
-| 1. Bootstrap | Remote state (encrypted S3 with native locking), GitHub OIDC role, account budget (ADR-0011) | Code ready |
-| 2. Network | VPC, subnets, routing, S3 gateway endpoint, Flow Logs | |
+| 1. Bootstrap | Remote state (encrypted S3 with native locking), GitHub OIDC role, account budget (ADR-0011) | Done |
+| 2. Network | VPC, subnets, routing, S3 gateway endpoint (data-perimeter policy, ADR-0012), Flow Logs; the `davicare-logs` key is created here because Flow Logs need it | Code ready |
 | 3. Security core | KMS keys, IAM roles and boundary, security groups, Access Analyzer | |
 | 4. Data | RDS MySQL (private, encrypted, TLS) and the hardened S3 vault | |
 | 5. Compute + thin app | EC2 (SSM, IMDSv2) running FastAPI, with synthetic data loaded | |

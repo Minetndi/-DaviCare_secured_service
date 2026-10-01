@@ -11,8 +11,9 @@ This is a **cloud security** project, not a healthcare product. The application 
 | Phase | Status |
 |---|---|
 | 0. Design: architecture, threat model, data classification, ADRs | Done |
-| 1. Bootstrap: remote state, GitHub OIDC CI role, budget | Code ready, not applied |
-| 2–8. Network, security core, data, compute, monitoring, AI foundation, CI + evidence | Not started |
+| 1. Bootstrap: remote state, GitHub OIDC CI role, budget | Done ([evidence](docs/evidence/phase-1-bootstrap.md)) |
+| 2. Network: VPC, subnets, routing, S3 endpoint data perimeter, Flow Logs | Code ready, not applied |
+| 3–8. Security core, data, compute, monitoring, AI foundation, CI + evidence | Not started |
 
 See the full [project plan](docs/project-plan.md).
 

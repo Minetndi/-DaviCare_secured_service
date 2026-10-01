@@ -15,5 +15,6 @@ Each significant design decision is recorded here in a lightweight format: conte
 | [0009](0009-app-db-user.md) | Dedicated least-privilege app DB user | Accepted |
 | [0010](0010-app-proxies-s3-documents.md) | App proxies S3 document transfers | Accepted |
 | [0011](0011-bootstrap-stack-scope.md) | Bootstrap stack scope: state key, plan-only CI role, budget | Accepted |
+| [0012](0012-s3-endpoint-data-perimeter.md) | S3 gateway endpoint policy as a data perimeter | Accepted |
 
 Planned: scanner exceptions (Phase 8), AI foundation design (Phase 7).
